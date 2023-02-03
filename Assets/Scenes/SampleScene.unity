@@ -2247,8 +2247,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 416313996}
-  - component: {fileID: 416313995}
-  - component: {fileID: 416313994}
   - component: {fileID: 416313993}
   - component: {fileID: 416313992}
   - component: {fileID: 416313991}
@@ -2331,30 +2329,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &416313994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416313990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &416313995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416313990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &416313996
 Transform:
   m_ObjectHideFlags: 0
@@ -4388,6 +4362,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613247793995582723, guid: d6e1ef0523fa78e45bc2771307f9366c,
+        type: 3}
+      propertyPath: sensibility
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613247793995582723, guid: d6e1ef0523fa78e45bc2771307f9366c,
+        type: 3}
+      propertyPath: inventoryController
+      value: 
+      objectReference: {fileID: 118877699}
+    - target: {fileID: 5613247793995582723, guid: d6e1ef0523fa78e45bc2771307f9366c,
+        type: 3}
+      propertyPath: interactionLayers.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5613247793995582724, guid: d6e1ef0523fa78e45bc2771307f9366c,
         type: 3}
@@ -9071,7 +9060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Storage
-  uid: 1
   amountOfSlots: 12
 --- !u!33 &5498032844820000102
 MeshFilter:
@@ -9131,7 +9119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Large Storage
-  uid: 0
   amountOfSlots: 24
 --- !u!23 &6567998054870469008
 MeshRenderer:
