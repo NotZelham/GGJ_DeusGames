@@ -12,19 +12,10 @@ public class Storage : MonoBehaviour, IInteractable
 {
     [Header("Settings")]
     [SerializeField] private string displayName;
-    [SerializeField] private string uid;
     [SerializeField] private int amountOfSlots = 12;
 
     List<Item> content;
     List<Slot> slots;
-
-    void Update()
-    {
-        if (ManagersManager.instance.inputManager.Inputs.PlayerGround.Crouch.triggered)
-        {
-            Save();
-        }
-    }
 
     private void Start()
     {
@@ -34,47 +25,6 @@ public class Storage : MonoBehaviour, IInteractable
         {
             content.Add(null);
         }
-
-        Load();
-    }
-
-    public void Save()
-    {
-        string destination = Application.persistentDataPath + $"/Storages/{uid}.dat";
-        FileStream file;
-
-        if (!Directory.Exists(destination))
-            Directory.CreateDirectory(Application.persistentDataPath + "/Storages");
-
-        if (!File.Exists(destination))
-        {
-            using (FileStream fs = File.Create(destination))
-            {
-                string json = JsonUtility.ToJson(content);
-                Byte[] info = new UTF8Encoding(true).GetBytes(json);
-                fs.Write(info, 0, info.Length);
-            }
-        }
-        else
-        {
-            using (FileStream fs = File.OpenWrite(destination))
-            {
-                string json = JsonUtility.ToJson(content);
-                Byte[] info = new UTF8Encoding(true).GetBytes(json);
-                fs.Write(info, 0, info.Length);
-            }
-        }
-    }
-
-    public void Load()
-    {
-        string destination = Application.persistentDataPath + $"/Storages/{uid}.dat";
-
-        if (!File.Exists(destination)) 
-            return;
-
-        string json = File.ReadAllText(destination);
-        content = JsonUtility.FromJson<List<Item>>(json);
     }
 
     public void Open()
